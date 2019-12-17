@@ -5,7 +5,6 @@ public class Station {
     private List<String> terminals;
 
     public Trip arrive(Trip trip){
-
         return trip;
     }
 

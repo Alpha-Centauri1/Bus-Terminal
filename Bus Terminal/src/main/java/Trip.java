@@ -1,5 +1,3 @@
-package main.java;
-
 public class Trip {
     private int number;
     private String departureTime;

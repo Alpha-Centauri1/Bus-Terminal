@@ -2,6 +2,7 @@ public class Bus {
 
     private int capacity;
     private int type;
+    private final int BIG = 50;
 
     public Bus(Integer capacity, Integer type) {
         this.capacity = capacity;
@@ -22,5 +23,9 @@ public class Bus {
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    public boolean isBig() {
+        return (capacity > BIG);
     }
 }

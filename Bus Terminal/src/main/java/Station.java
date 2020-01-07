@@ -4,17 +4,19 @@ public class Station {
     private String name;
     private List<String> terminals;
 
-    public Trip arrive(Trip trip){
-        return trip;
+    public Station(){
+
     }
 
-    public Integer departure(String terminalNumber){
-
-        return 4;
-    }
-
-    public Integer terminalStatus(String terminalNumber){
-
+    public int arrive(Trip trip){
         return 1;
+    }
+
+    public void departure(String terminalNumber){
+
+    }
+
+    public void terminalStatus(String terminalNumber){
+
     }
 }

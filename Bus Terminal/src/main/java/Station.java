@@ -4,25 +4,30 @@ public class Station {
     private String name;
     private List<Terminal> terminals;
 
-    public Station() {
-
+    public Station(String name, List<Terminal> terminals) {
+        this.name = name;
+        this.terminals = terminals;
     }
 
-    public int arrive(Trip trip) {
-        for (int i = 0; i < terminals.size(); i++) {
+    public int arrive(Trip trip) throws NoTerminalAvailableException{
+        Terminal terminal = determineFreeTerminal(trip);
+        terminal.arrive(trip);
+        return terminal.getNumber();
+    }
+
+    private Terminal determineFreeTerminal(Trip trip) throws NoTerminalAvailableException {
+        for (short i = 0; i < terminals.size(); i++) {
             if (terminals.get(i).isAvailable()) {
                 if (trip.isNational()) {
-                    terminals.get(i).arrive(trip);
-                    return i + 1;
-                }else {
-                    if (trip.getBus().isBig()){
-
+                    return terminals.get(i);
+                } else {
+                    if (terminals.get(i) instanceof InternationalTerminal && ((InternationalTerminal )terminals.get(i)).getSize() == InternationalTerminal.LARGE) {
+                        return terminals.get(i);
                     }
                 }
-
             }
         }
-        return -1;
+        throw new NoTerminalAvailableException();
     }
 
     public void departure(String terminalNumber) {
@@ -31,5 +36,11 @@ public class Station {
 
     public void terminalStatus(String terminalNumber) {
 
+    }
+
+    public class NoTerminalAvailableException extends Exception {
+        public NoTerminalAvailableException() {
+            super("For the time being are no terminals available!");
+        }
     }
 }

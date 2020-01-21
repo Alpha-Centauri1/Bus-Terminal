@@ -40,7 +40,7 @@ public class Station {
 
     public class NoTerminalAvailableException extends Exception {
         public NoTerminalAvailableException() {
-            super("For the time being are no terminals available!");
+            super("For the time being there are no terminals available!");
         }
     }
 }

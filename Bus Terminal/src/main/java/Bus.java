@@ -1,12 +1,12 @@
 public class Bus {
 
     private int capacity;
-    private int type;
+    private int number;
     private final int BIG = 50;
 
-    public Bus(Integer capacity, Integer type) {
+    public Bus(Integer capacity, Integer number) {
         this.capacity = capacity;
-        this.type = type;
+        this.number = number;
     }
 
     public int getCapacity() {
@@ -17,12 +17,12 @@ public class Bus {
         this.capacity = capacity;
     }
 
-    public int getType() {
-        return type;
+    public int getNumber() {
+        return number;
     }
 
-    public void setType(int type) {
-        this.type = type;
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     public boolean isBig() {

@@ -1,3 +1,7 @@
+/**
+ * Terminal which is international. Extends the terminal class
+ * @extends Terminal
+ */
 public class InternationalTerminal extends Terminal {
 
     public static final int SMALL = 0;
@@ -5,6 +9,11 @@ public class InternationalTerminal extends Terminal {
 
     private int size;
 
+    /**
+     * default constructor
+     * @param number functions as the ID
+     * @param size is the size of the bus
+     */
     public InternationalTerminal(int number, int size) {
         super(number);
         this.size = size;

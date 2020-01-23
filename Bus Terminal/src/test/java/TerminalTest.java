@@ -3,7 +3,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class TerminalTest {
 
     @org.junit.jupiter.api.Test
-    void depature() {
+    void departure() {
     }
 
     @org.junit.jupiter.api.Test

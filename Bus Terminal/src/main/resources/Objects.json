@@ -50,7 +50,7 @@
             "bus": "Bus 3"
         }
     ],
-    "Busses": [
+    "Buses": [
         {
             "number": "1",
             "capacity": "40"

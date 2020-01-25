@@ -6,6 +6,7 @@ public abstract class Terminal {
 
     private Integer number;
     public Trip trip;
+    private boolean isAvailable = true;
 
     /**
      * default constructor
@@ -19,6 +20,7 @@ public abstract class Terminal {
      * function sets trip to null
      */
     public void departure() {
+        isAvailable = true;
         this.trip = null;
     }
 
@@ -26,6 +28,7 @@ public abstract class Terminal {
      * @param trip gets set to trip from class Trip
      */
     public void arrive(Trip trip) {
+        isAvailable = false;
         this.trip = trip;
     }
 
@@ -33,7 +36,7 @@ public abstract class Terminal {
      * @return boolean value which tells, if it's available or not
      */
     public boolean isAvailable() {
-        return (this.trip == null);
+        return isAvailable;
     }
 
     /**
